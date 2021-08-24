@@ -2,6 +2,7 @@ package br.com.hotelsaopaulo.orm;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,8 @@ public class PessoaContato {
 	@Column(name="descricao", length = 100)
 	private String descricao;
 
-	@ManyToOne
+//	@ManyToOne(fetch = FetchType.LAZY) omite o valor
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "pessoa")
 	private Pessoa pessoa;
 

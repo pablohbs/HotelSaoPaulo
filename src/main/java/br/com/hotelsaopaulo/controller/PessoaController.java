@@ -54,6 +54,7 @@ public class PessoaController implements Serializable {
 
 			if (pessoa.getId() == null) {
 				pessoaDAO.merge(pessoa);
+				
 				for (PessoaContato contatoTemp : listaContato) {
 					contatoTemp.setPessoa(pessoaDAO.getRetornaId());
 					contatoDAO.merge(contatoTemp);

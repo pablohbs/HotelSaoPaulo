@@ -1,6 +1,7 @@
 package br.com.hotelsaopaulo.dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -25,7 +26,8 @@ public class PessoaDAO extends GenericDAO<Pessoa> implements Serializable{
 
 			return query.list();
 		} catch (RuntimeException erro) {
-			throw erro;
+			erro.printStackTrace();
+			return new ArrayList<PessoaContato>();
 		} finally {
 			sessao.close();
 		}

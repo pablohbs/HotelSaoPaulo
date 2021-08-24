@@ -50,7 +50,7 @@
 			<p:sticky target="sticky" />
 			<p />
 		
-			<p:dataTable value="#{pessoaController.listaPessoa}" var="pessoa" paginator="true" paginatorPosition="bottom" reflow="true"	emptyMessage="nenhuma pessoa cadastrada">
+			<p:dataTable value="#{pessoaController.listaPessoa}" var="pessoa" paginator="true" reflow="true"	emptyMessage="nenhuma pessoa cadastrada">
 
 				<p:column headerText="ID" width="10%" style="text-align: center;">
 					<h:outputLabel value="#{pessoa.id}" />
@@ -76,8 +76,10 @@
 					</p:commandButton>
 					<p:tooltip for="imprimir" value="Imprimir" position="top"/>
 
-					<p:commandButton id="editar" icon="fa fa-pencil" oncomplete="PF('dlgPessoa').show(); PF('dlgPessoa').initPosition();" actionListener="#{pessoaController.editarPessoa}" 
-					update=":feedBackUsuario :FormCadastro" styleClass="btn-warning">
+					<p:commandButton id="editar" icon="fa fa-pencil" 
+					oncomplete="PF('dlgPessoa').show(); PF('dlgPessoa').initPosition();" 
+					actionListener="#{pessoaController.editarPessoa}" 
+					update=":FormCadastro" styleClass="btn-warning">
 						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
 					</p:commandButton>
 					<p:tooltip for="editar" value="Editar" position="top"/>
@@ -169,7 +171,9 @@
 			<p />
 			<p:panelGrid columns="1" layout="grid" columnClasses="ui-grid-col-12" styleClass="ui-panelgrid-blank">	
 
-				<p:commandButton value="Adicionar" oncomplete="PF('dlgContato').hide();" actionListener="#{pessoaController.salvarContato}"	
+				<p:commandButton value="Adicionar" 
+				oncomplete="PF('dlgContato').hide(); PF('dlgPessoa').initPosition();" 
+				actionListener="#{pessoaController.salvarContato}"	
 				update=":feedBackUsuario :FormCadastro:tabelaContato" />
 			</p:panelGrid>
 
