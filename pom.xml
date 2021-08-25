@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.cursojavaweb</groupId>
-	<artifactId>CursoJavaWeb</artifactId>
+	<groupId>br.com.hotelsaopaulo</groupId>
+	<artifactId>HotelSaoPaulo</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
@@ -11,11 +11,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<name>CursoJavaWeb</name>
+	<name>HotelSaoPaulo</name>
 
 	<!-- Nome do Projeto no Navegador -->
 	<build>
-		<finalName>CursoJavaWeb</finalName>
+		<finalName>HotelSaoPaulo</finalName>
 		<plugins>
 
 			<!-- Compilador do Maven -->
@@ -84,6 +84,13 @@
 			<artifactId>jasperreports</artifactId>
 			<version>6.3.1</version>
 			<scope>compile</scope>
+		</dependency>
+		
+		<!-- Dependencia do BootFaces -->
+		<dependency>
+			<groupId>net.bootsfaces</groupId>
+			<artifactId>bootsfaces</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 		
 	</dependencies>

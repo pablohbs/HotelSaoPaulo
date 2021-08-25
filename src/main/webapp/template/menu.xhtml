@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+	<h:head>
+		<h:outputStylesheet library="css" name="estilos.css" />
+	</h:head>
+
+	<h:form id="menuform">
+		<b:navBar brand-href="http://localhost:8080" fluid="true" icon-size="lg" 
+		style="backgroud: red !important;">
+
+			<b:navbarLinks>
+
+				<b:dropMenu value="ATENDIMENTO" iconAwesome="fa-group" icon-size="lg" >
+					<b:dropMenu value="RATEIO DE SOBRAS" iconAwesome="fa-dollar" >
+						<b:navLink value="CONSULTAR/SOLICITAR RESGATE" iconAwesome="fa-search" outcome="/visao/pessoa.xhtml" />
+					</b:dropMenu>				
+				</b:dropMenu>
+				
+				<b:dropMenu value="GESTÃO DE PESSOAS" iconAwesome="fa-user" icon-size="lg" >
+					<b:navLink value="FUNÇÃO" iconAwesome="fa-street-view"	outcome="/visao/pessoa.xhtml" />
+					<b:navLink value="SETOR" iconAwesome="fa-group"	outcome="/visao/pessoa.xhtml" />	
+					<b:navLink value="FUNCIONÁRIO" iconAwesome="fa-user-plus" outcome="/visao/pessoa.xhtml" />				
+				</b:dropMenu>
+					
+				<b:navLink value="PA" iconAwesome="fa-building-o" outcome="/visao/pessoa.xhtml" />
+					
+			</b:navbarLinks>
+		</b:navBar>
+
+	</h:form>
+
+</ui:composition>

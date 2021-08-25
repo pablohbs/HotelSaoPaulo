@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="estilos.css" />
+
+	<div class="container-fluid" style="width: 100% !important; height: 60px;">
+		<div class="rows" style="width: 100% !important; margin-top: 12px; margin-bottom: 15px;">
+			<p:toolbar id="sticky" 
+			style="background: #4F4F4F !important; border-color: #4F4F4F !important; color: #000000 !important; font-size: 12px !important;">
+				<f:facet name="left">
+					<p:graphicImage width="240" height="28" library="images" name="logo.png" />
+				</f:facet>
+
+				<f:facet name="right">
+					<h:form>
+						<h:panelGroup>
+							<p:outputLabel value="Bem vindo(a): " styleClass="fonteBranca" />
+							<span class="ui-separator" />
+							<p:outputLabel value="FULANO DE TAL" styleClass="fonteBranca" />
+						</h:panelGroup>
+
+						<span class="ui-separator" />
+
+						<p:menuButton icon="fa fa-navicon">
+							<p:menuitem value="Trocar Senha" action="/visao/pessoa.xhtml" icon="fa fa-key" />
+							<p:separator />
+							<p:menuitem value="Logout" icon="fa fa-power-off" />
+						</p:menuButton>
+					</h:form>
+				</f:facet>
+			</p:toolbar>
+			<p:sticky target="sticky" />
+
+		</div>
+
+	</div>
+</ui:composition>

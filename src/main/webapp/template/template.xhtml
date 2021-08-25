@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+<h:head>
+	<title>Hotel São Paulo</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	
+	<h:outputStylesheet library="css" name="estilos.css" />
+	<h:outputStylesheet library="css" name="template.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	
+	<h:outputScript library="js" name="mascara.js" />
+    <h:outputScript library="js" name="locales.js" />
+</h:head>
+
+<h:body>
+	<p:growl id="msgGlobal" closable="true" />
+
+	<div class="gridTopo" style="align: center; width: 100% !important;">
+		<ui:include src="./topbar.xhtml" />
+	</div>
+	
+	<div style="align: center; width: 100% !important;">
+		<ui:include src="./menu.xhtml" />
+	</div>
+
+	<div class="gridConteudo">
+		<ui:insert name="conteudo" />
+	</div>	
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+		<p:graphicImage library="carregar" name="ajax-loader.gif" />
+	</p:dialog>
+
+	<h:form>
+		<p:confirmDialog global="true">
+			<p:commandButton value="Sim" icon="fa fa-check" type="button" styleClass="ui-confirmdialog-yes btn-success" />
+			<p:commandButton value="Não" icon="fa fa-close" type="button" styleClass="ui-confirmdialog-no btn-danger" />
+		</p:confirmDialog>
+	</h:form>
+	
+	<div class="footer">
+      <!--   <div class="rodepeLadrilho" />  -->
+    </div>
+
+</h:body>
+
+</html>
